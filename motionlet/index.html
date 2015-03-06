@@ -1,0 +1,236 @@
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>Motionlets</title>
+	<meta content="Limin, wanglimin.github.io" name="keywords" />
+	<style media="screen" type="text/css">html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0pt none;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0pt;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: 0pt;
+  padding: 0pt;
+  vertical-align: baseline;
+}
+
+a {
+  color: #1772d0;
+  text-decoration:none;
+}
+
+a:focus, a:hover {
+  color: #f09228;
+  text-decoration:none;
+}
+
+a.paper {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+b.paper {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+* {
+  margin: 0pt;
+  padding: 0pt;
+}
+
+body {
+  position: relative;
+  margin: 3em auto 2em auto;
+  width: 800px;
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  background: #eee;
+}
+
+h1 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+strong {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  # font-size: 16px;
+  font-weight:bold;
+}
+
+ul { 
+  list-style: circle;
+}
+
+img {
+  border: none;
+}
+
+li {
+  padding-bottom: 0.5em;
+  margin-left: 1.4em;
+}
+
+em, i {
+	font-style:italic;
+}
+
+div.section {
+  clear: both;
+  margin-bottom: 1.5em;
+  background: #eee;
+}
+
+div.spanner {
+  clear: both;
+}
+
+div.paper {
+  clear: both;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 1em 1em 1em 1em;
+}
+img.paper {
+  margin-bottom: 0.5em;
+  float: left;
+  width: 200px;
+}
+
+img.pipeline {
+  float: center;
+  width: 770px;
+}
+
+span.blurb {
+  font-style:italic;
+  display:block;
+  margin-top:0.75em;
+  margin-bottom:0.5em;
+}
+
+pre, code {
+  font-family: 'Lucida Console', 'Andale Mono', 'Courier', monospaced;
+  margin: 1em 0;
+  padding: 0;
+}
+
+div.paper pre {
+  font-size: 0.9em;
+}
+</style>
+
+<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" /><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>-->
+</head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45959174-3', 'wanglimin.github.io');
+  ga('send', 'pageview');
+
+</script>
+<body>
+
+<div align = "center">
+<h1>Motionlets: Mid-Level 3D Parts for Human Motion Recognition</h1> <br />
+<h3>Limin Wang, Yu Qiao, and Xiaoou Tang</h1>
+</div>
+
+<div style="clear: both;">
+<div class="paper">
+  <img class="pipeline" src="motionlet.png" title="Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors" />
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Abstract</h2>
+  <div class="paper">
+  This paper proposes motionlet, a mid-level and spatiotemporal part, for human motion recognition. Motionlet can be seen as a tight cluster in motion and appearance space, corresponding to the moving process of different body parts. We postulate three key properties of motionlet for action recognition: high motion saliency, multiple scale representation, and representative-discriminative ability. Towards this goal, we develop a data-driven approach to learn motionlets from training videos. First, we extract 3D regions with high motion saliency. Then we cluster these regions and preserve the centers as candidate templates for motionlet. Finally, we examine the representative and discriminative power of the candidates, and introduce a greedy method to select effective candidates. With motionlets, we present a mid-level representation for video, called motionlet activation vector. We conduct experiments on three datasets, KTH, HMDB51, and UCF50. The results show that the proposed methods significantly outperform state-of-the-art methods.
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Method</h2>
+  <div class="paper">
+  As shown in the Figure above, the whole process consists of three steps, 1) extracting motion salient regions, 2) finding motionlet candidates, and 3) ranking motionlets.
+		  <br><br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong>Extraction of Motion Salient Regions: </strong> we extract 3D video regions with high motion saliency as seeds for constructing motionlets. Specifically, we use spatiotemporal orientation energy (SOE) for motion saliency detection and low level motion description.
+		  </li>
+		  <br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong> Finding Motionlet Candidates: </strong> we identify representative ones from all 3D regions by using clustering method. We first group the 3D regions according to their spatial sizes. 
+		  Then, for each group, we clusterthe 3D regions according to motion and appearance information.
+		  </li>
+		  <br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong> Ranking Motionlet: </strong> our goal is to find a subset of motionlets satisfying two requirements, the sum of representative and discriminative power should be as large as possible; the coverage percentage of training samples should be as high as possible. We design a greedy algorithm to select motionlets sequentially.
+		  </li>
+		  <br>
+		   For video represenation, we resort resort to a scanning-pooling scheme. For each motionlet, we conduct window scanning over video data and use max pooling to obtain its response maximum. We call this representation as motionlet activation vector.
+  </div>
+</div>
+</div>
+
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Results</h2>
+  <div class="paper">
+  <ul> 
+  <li><h3>Examples of motionlets</h3> </li>
+  <img src="example.JPG"  width="770"/>
+  <li><h3>Recognition Results on Small-Scale Dataset:</h3> </li>
+  <div align=center> <img src="result4.JPG"  width="400" /> </div>
+  <li><h3>Recognition Results on Large-Scale Datasets:</h3> </li>
+  <img src="result1.JPG"  width="770" align = "center"/>
+  <li><h3> Combine with Other Representations and Varying Number of Motionlets </h3></li>
+  <div align=center>
+  <img src="result2.JPG"  width="350" align = "center"/>
+  <img src="result3.JPG"  width="350" align = "center"/>
+  </div>
+  </ul>
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Downloads</h2>
+  <div class="paper">
+    We release the code of extraction low-level features of a video. It contains the Spatio-temporal Orientation Engergy (SOE), and dense HOG and HOE. Matlab code (<a href='SOE_release.zip'>[zip files (258 KB)]</a>)
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+</body>
+</html>
