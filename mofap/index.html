@@ -168,7 +168,7 @@ div.paper pre {
 <div class="section">
   <h2>Abstract</h2>
   <div class="paper">
-  This paper proposes motionlet, a mid-level and spatiotemporal part, for human motion recognition. Motionlet can be seen as a tight cluster in motion and appearance space, corresponding to the moving process of different body parts. We postulate three key properties of motionlet for action recognition: high motion saliency, multiple scale representation, and representative-discriminative ability. Towards this goal, we develop a data-driven approach to learn motionlets from training videos. First, we extract 3D regions with high motion saliency. Then we cluster these regions and preserve the centers as candidate templates for motionlet. Finally, we examine the representative and discriminative power of the candidates, and introduce a greedy method to select effective candidates. With motionlets, we present a mid-level representation for video, called motionlet activation vector. We conduct experiments on three datasets, KTH, HMDB51, and UCF50. The results show that the proposed methods significantly outperform state-of-the-art methods.
+  This paper proposes a multi-level video representation by stacking the activations of motion features, atoms, and phrases (MoFAP). Motion features refer to those low-level local descriptors, while motion atoms and phrases can be viewed as mid-level ``temporal parts''. Motion atom is defined as an atomic part of action, and captures the motion information of video in a short temporal scale. Motion phrase is a temporal composite of multiple motion atoms with an AND/OR structure. It further enhances the discriminative capacity of motion atoms by incorporating temporal structure in a longer temporal scale. Specifically, we first design a discriminative clustering method to automatically discover a set of representative motion atoms. Then, we mine effective motion phrases with high discriminative and representative capacity in a bottom-up construction algorithm. Based on these basic units of motion features, atoms, and phrases, we construct a MoFAP network by stacking them layer by layer. This MoFAP network enables us to extract the effective representation of video data from different levels and scales, by conducting pooling operation in each layer. The separate representations from motion features, motion atoms, and motion phrases are concatenated as a whole one, called Activation of MoFAP. The effectiveness of this representation is demonstrated on four challenging datasets: Olympic Sports, UCF50, HMDB51, and UCF101. Experimental results show that our representation achieves the state-of-the-art performance on these datasets.
   </div>
 </div>
 </div>
@@ -198,26 +198,6 @@ div.paper pre {
 </div>
 
 
-<div style="clear: both;">
-<div class="section">
-  <h2>Results</h2>
-  <div class="paper">
-  <ul> 
-  <li><h3>Examples of motionlets</h3> </li>
-  <img src="example.JPG"  width="770"/>
-  <li><h3>Recognition Results on Small-Scale Dataset:</h3> </li>
-  <div align=center> <img src="result4.JPG"  width="400" /> </div>
-  <li><h3>Recognition Results on Large-Scale Datasets:</h3> </li>
-  <img src="result1.JPG"  width="770" align = "center"/>
-  <li><h3> Combine with Other Representations and Varying Number of Motionlets </h3></li>
-  <div align=center>
-  <img src="result2.JPG"  width="350" align = "center"/>
-  <img src="result3.JPG"  width="350" align = "center"/>
-  </div>
-  </ul>
-  </div>
-</div>
-</div>
 
 <div style="clear: both;">
 <div class="section">
