@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<title>Motionlets</title>
+	<title>TDD</title>
 	<meta content="Limin, wanglimin.github.io" name="keywords" />
 	<style media="screen" type="text/css">html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   border: 0pt none;
@@ -154,13 +154,13 @@ div.paper pre {
 <body>
 
 <div align = "center">
-<h1>Motionlets: Mid-Level 3D Parts for Human Motion Recognition</h1> <br />
+<h1>Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors</h1> <br />
 <h3>Limin Wang, Yu Qiao, and Xiaoou Tang</h1>
 </div>
 
 <div style="clear: both;">
 <div class="paper">
-  <img class="pipeline" src="motionlet.PNG" title="motionlet" />
+  <img class="pipeline" src="TDD.PNG" title="motionlet" />
 </div>
 </div>
 
@@ -168,7 +168,7 @@ div.paper pre {
 <div class="section">
   <h2>Abstract</h2>
   <div class="paper">
-  This paper proposes motionlet, a mid-level and spatiotemporal part, for human motion recognition. Motionlet can be seen as a tight cluster in motion and appearance space, corresponding to the moving process of different body parts. We postulate three key properties of motionlet for action recognition: high motion saliency, multiple scale representation, and representative-discriminative ability. Towards this goal, we develop a data-driven approach to learn motionlets from training videos. First, we extract 3D regions with high motion saliency. Then we cluster these regions and preserve the centers as candidate templates for motionlet. Finally, we examine the representative and discriminative power of the candidates, and introduce a greedy method to select effective candidates. With motionlets, we present a mid-level representation for video, called motionlet activation vector. We conduct experiments on three datasets, KTH, HMDB51, and UCF50. The results show that the proposed methods significantly outperform state-of-the-art methods.
+Visual features are of vital importance for human action understanding in videos. This paper presents a new video representation, called trajectory-pooled deep-convolutional descriptor (TDD), which shares the merits of both hand-crafted features  and deep-learned features. Specifically, we utilize deep architectures to learn discriminative convolutional feature maps, and conduct trajectory-constrained pooling to aggregate these convolutional features into effective descriptors. To enhance the robustness of TDDs, we design two normalization methods to transform convolutional feature maps, namely spatiotemporal normalization and channel normalization. The advantages of our features come from (i) TDDs are automatically learned and contain high discriminative capacity compared with those hand-crafted features; (ii) TDDs take account of the intrinsic characteristics of temporal dimension and introduce the strategies of trajectory-constrained sampling and pooling for aggregating deep-learned features. We conduct experiments on two challenging datasets: HMDB51 and UCF101. Experimental results show that TDDs outperform previous hand-crafted features and deep-learned features. Our method also achieves superior performance to the state of the art on these datasets (HMDB51: 65.9% and UCF101:91.5%).
   </div>
 </div>
 </div>
@@ -177,22 +177,6 @@ div.paper pre {
 <div class="section">
   <h2>Method</h2>
   <div class="paper">
-  As shown in the Figure above, the whole process consists of three steps, 1) extracting motion salient regions, 2) finding motionlet candidates, and 3) ranking motionlets.
-		  <br><br>
-		  <li style = "list-style-type:square; margin-left:0px">
-		  <strong>Extraction of Motion Salient Regions: </strong> we extract 3D video regions with high motion saliency as seeds for constructing motionlets. Specifically, we use spatiotemporal orientation energy (SOE) for motion saliency detection and low level motion description.
-		  </li>
-		  <br>
-		  <li style = "list-style-type:square; margin-left:0px">
-		  <strong> Finding Motionlet Candidates: </strong> we identify representative ones from all 3D regions by using clustering method. We first group the 3D regions according to their spatial sizes. 
-		  Then, for each group, we clusterthe 3D regions according to motion and appearance information.
-		  </li>
-		  <br>
-		  <li style = "list-style-type:square; margin-left:0px">
-		  <strong> Ranking Motionlet: </strong> our goal is to find a subset of motionlets satisfying two requirements, the sum of representative and discriminative power should be as large as possible; the coverage percentage of training samples should be as high as possible. We design a greedy algorithm to select motionlets sequentially.
-		  </li>
-		  <br>
-		   For video represenation, we resort resort to a scanning-pooling scheme. For each motionlet, we conduct window scanning over video data and use max pooling to obtain its response maximum. We call this representation as motionlet activation vector.
   </div>
 </div>
 </div>
@@ -203,17 +187,12 @@ div.paper pre {
   <h2>Results</h2>
   <div class="paper">
   <ul> 
-  <li><h3>Examples of motionlets</h3> </li>
-  <img src="example.JPG"  width="770"/>
-  <li><h3>Recognition Results on Small-Scale Dataset:</h3> </li>
-  <div align=center> <img src="result4.JPG"  width="400" /> </div>
-  <li><h3>Recognition Results on Large-Scale Datasets:</h3> </li>
-  <img src="result1.JPG"  width="770" align = "center"/>
-  <li><h3> Combine with Other Representations and Varying Number of Motionlets </h3></li>
-  <div align=center>
-  <img src="result2.JPG"  width="350" align = "center"/>
-  <img src="result3.JPG"  width="350" align = "center"/>
-  </div>
+  <li><h3>Examples of Feature Map</h3> </li>
+  <img src="feature_map.PNG"  width="770"/>
+  <li><h3>Evaluation of TDD:</h3> </li>
+  <div align=center> <img src="evaluation.PNG"  width="380" /> </div>
+  <li><h3>Comparison with the State of The Art</h3> </li>
+  <div align=center><img src="comparison.PNG"  width="400" align = "center"/> </div>
   </ul>
   </div>
 </div>
@@ -223,7 +202,7 @@ div.paper pre {
 <div class="section">
   <h2>Downloads</h2>
   <div class="paper">
-    We release the code of extraction low-level features of a video. It contains the Spatio-temporal Orientation Engergy (SOE), and dense HOG and HOE. Matlab code (<a href='SOE_release.zip'>[zip files (258 KB)]</a>)
+    Models and Codes will be coming soon.
   </div>
 </div>
 </div>
@@ -232,7 +211,7 @@ div.paper pre {
 <div class="section">
   <h2>References</h2>
   <div class="paper">
-    L. Wang, Y. Qiao, and Xiaoou Tang, Motionlets: Mid-Level 3D Parts for Human Motion Recognition, in IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2013
+    L. Wang, Y. Qiao, and Xiaoou Tang, Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors, in IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2015
   </div>
 </div>
 </div>
