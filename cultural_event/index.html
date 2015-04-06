@@ -1,0 +1,244 @@
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>Cultural Event Recognition</title>
+	<meta content="Limin, wanglimin.github.io" name="keywords" />
+	<style media="screen" type="text/css">html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0pt none;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0pt;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: 0pt;
+  padding: 0pt;
+  vertical-align: baseline;
+}
+
+a {
+  color: #1772d0;
+  text-decoration:none;
+}
+
+a:focus, a:hover {
+  color: #f09228;
+  text-decoration:none;
+}
+
+a.paper {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+b.paper {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+* {
+  margin: 0pt;
+  padding: 0pt;
+}
+
+body {
+  position: relative;
+  margin: 3em auto 2em auto;
+  width: 800px;
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  background: #eee;
+}
+
+h1 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+strong {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  # font-size: 16px;
+  font-weight:bold;
+}
+
+ul { 
+  list-style: circle;
+}
+
+img {
+  border: none;
+}
+
+li {
+  padding-bottom: 0.5em;
+  margin-left: 1.4em;
+}
+
+em, i {
+	font-style:italic;
+}
+
+div.section {
+  clear: both;
+  margin-bottom: 1.5em;
+  background: #eee;
+}
+
+div.spanner {
+  clear: both;
+}
+
+div.paper {
+  clear: both;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 1em 1em 1em 1em;
+}
+img.paper {
+  margin-bottom: 0.5em;
+  float: left;
+  width: 200px;
+}
+
+img.pipeline {
+  float: center;
+  width: 770px;
+}
+
+span.blurb {
+  font-style:italic;
+  display:block;
+  margin-top:0.75em;
+  margin-bottom:0.5em;
+}
+
+pre, code {
+  font-family: 'Lucida Console', 'Andale Mono', 'Courier', monospaced;
+  margin: 1em 0;
+  padding: 0;
+}
+
+div.paper pre {
+  font-size: 0.9em;
+}
+</style>
+
+<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" /><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>-->
+</head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45959174-3', 'wanglimin.github.io');
+  ga('send', 'pageview');
+
+</script>
+<body>
+
+<div align = "center">
+<h1>Event Recognition Using Object-Scene Convolutional Neural Networks</h1> <br />
+<h3>Limin Wang, Zhe Wang, Wenbin Du, and Yu Qiao</h3>
+</div>
+
+<div style="clear: both;">
+<div class="paper">
+  <img class="pipeline" src="OS-CNN.PNG" title="" />
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Abstract</h2>
+  <div class="paper">
+  Event recognition from still images is of great importance for image understanding. However, compared with event recognition in videos, there are much fewer research works on event recognition in images. This paper addresses the issue of event recognition from images and proposes an effective method with deep neural networks. Specifically, we propose a new architecture, called Object-Scene Convolutional Neural Network (OS-CNN). This architecture is decomposed into object net and scene net, which extract useful information for event understanding from the perspective of objects and scene context, respectively. Meanwhile, we investigate different network architectures for OS-CNN design, and adapt the deep (AlexNet) and very-deep (GoogLeNet) networks to the task of event recognition. Furthermore, we find that the deep and very-deep networks are complementary to each other. Finally, based on the proposed OS-CNN and comparative study of different network architectures, we come up with a solution of five-stream CNN for the track of cultural event recognition at the ChaLearn Looking at People (LAP) challenge 2015. Our method obtains the performance of 85.5% and ranks the 1st place in this challenge.
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Method</h2>
+  <div class="paper">
+  We utilize two separate components for event recognition. The object stream, pre-trained in large object dataset (ImageNet), carries information about object depicted in the image. The scene stream, pre-trained in large scene dataset (Places), captures the pattern about scene context of this image. 
+  <br><br>
+  <li style = "list-style-type:square; margin-left:0px">
+  <strong>Object Net: </strong>  We first choose the Clarifai network architecture and use the pre-trained model from VGG group. Then, we fine tune the model parameters for the task of event recognition on the training dataset provided by the challenge organizers.
+  </li>
+  <br>
+  <li style = "list-style-type:square; margin-left:0px">
+  <strong>Scene Net: </strong> We first use the pre-trained model in Places dataset, which choose the famous AlexNet architecture. Similar to object net, we then fine tune the model parameters on the training dataset from the cultural event recognition challenge.
+  </li>
+  <br>
+  <li style = "list-style-type:square; margin-left:0px">
+  <strong>Ensemble of Multiple CNNs: </strong> Several successful deep CNN architectures have been designed for the task of object recognition at the ImageNet Large Scale Visual Recognition Challenge. These architectures can be roughly classified into two categories: (i) deep CNN including AlexNet and Clarifai, (ii) very-deep CNN including GoogLeNet and VGGNet. We exploit these very-deep networks in our proposed Object-Scene CNN architecture and aim to verify the superior performance of deeper structure
+  </li>
+
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Results</h2>
+  <div class="paper">
+  <li><h3>Effectiveness of OS-CNN</h3> </li>
+  <img class="pipeline" src="filter.PNG" title="" />
+  <img class="pipeline" src="result1.PNG" title="" />
+  <br>
+  <li><h3>Evaluation of different architecture</h3> </li>
+  <img class="pipeline" src="result2.PNG" title="" />
+  <br>
+  <li><h3>Challenge approach and results</h3></li>
+  Our challenge solution is a <strong>five-stream CNN</strong> pre-trained with different datasets (ImageNet or Places) equipped with different network architectures. The challenge results are shown as following:
+  <br>
+  <div align=center>
+  <img src="result4.PNG"  width="300" align = "center"/>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Downloads</h2>
+  <div class="paper">
+    Models and Codes will be coming soon.
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>References</h2>
+  <div class="paper">
+   L. Wang, Z. Wang, W. Du, and Y. Qiao, Event Recognition Using Object-Scene Convolutional Neural Networks, in ChaLearn Looking at People (<strong>LAP</strong>) workshop, <strong>CVPR</strong>, 2015.
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+</body>
+</html>
