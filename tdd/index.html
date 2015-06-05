@@ -160,7 +160,7 @@ div.paper pre {
 
 <div style="clear: both;">
 <div class="paper">
-  <img class="pipeline" src="TDD.PNG" title="motionlet" />
+  <img class="pipeline" src="TDD.PNG" title="tdd" />
 </div>
 </div>
 
@@ -168,6 +168,7 @@ div.paper pre {
 <div class="section">
   <h2>Abstract</h2>
   <div class="paper">
+  Visual features are of vital importance for human action understanding in videos. This paper presents a new video representation, called trajectory-pooled deep-convolutional descriptor (TDD), which shares the merits of both hand-crafted features and deep-learned features. Specifically, we utilize deep architectures to learn discriminative convolutional feature maps, and conduct trajectory-constrained pooling to aggregate these convolutional features into effective descriptors. To enhance the robustness of TDDs, we design two normalization methods to transform convolutional feature maps, namely spatiotemporal normalization and channel normalization. The advantages of our features come from (i) TDDs are automatically learned and contain high discriminative capacity compared with those hand-crafted features; (ii) TDDs take account of the intrinsic characteristics of temporal dimension and introduce the strategies of trajectory-constrained sampling and pooling for aggregating deep-learned features. We conduct experiments on two challenging datasets: HMDB51 and UCF101. Experimental results show that TDDs outperform previous hand-crafted features and deep-learned features. Our method also achieves superior performance to the state of the art on these datasets
   </div>
 </div>
 </div>
@@ -176,6 +177,21 @@ div.paper pre {
 <div class="section">
   <h2>Method</h2>
   <div class="paper">
+  As shown in the Figure above, the whole process consists of three steps, 1) Extracting trajectories, 2) Learning convolutional feature maps, and 3) Constructing Trajectory-Pooled Deep-Convolutional Descriptors.
+		  <br><br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong>Extracting trajectories: </strong> We choose to use Improved Trajectories due its good performance on action recognition. However, we only track on a single scale to speed up the process of trajectory extraction.
+		  </li>
+		  <br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong>Learning convolutional maps: </strong> We exploit two-stream ConvNets to learn discriminative feature maps from both RGB images and optical flow fields. Meanwhile, we construct the multi-scale pyramid representation of both modalities and thus obtain the multi-scale convolutional feature maps.
+		  </li>
+		  <br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong>Constructing TDD: </strong> our goal is to find a subset of motionlets satisfying two requirements, the sum of representative and discriminative power should be as large as possible; the coverage percentage of training samples should be as high as possible. We design a greedy algorithm to select motionlets sequentially.
+		  </li>
+		  <br>
+		   For video represenation, we resort resort to a scanning-pooling scheme. For each motionlet, we conduct window scanning over video data and use max pooling to obtain its response maximum. We call this representation as motionlet activation vector.
   </div>
 </div>
 </div>
