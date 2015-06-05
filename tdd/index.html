@@ -188,10 +188,10 @@ div.paper pre {
 		  </li>
 		  <br>
 		  <li style = "list-style-type:square; margin-left:0px">
-		  <strong>Constructing TDD: </strong> our goal is to find a subset of motionlets satisfying two requirements, the sum of representative and discriminative power should be as large as possible; the coverage percentage of training samples should be as high as possible. We design a greedy algorithm to select motionlets sequentially.
+		  <strong>Constructing TDD: </strong> After the extraction of trajectories and convolutional feature maps, we perform trajectory-constrained pooling to aggregate feature maps into effective descriptors, called TDD. To enhance the discriminative capacity of TDD, we propose two kinds of normalization method: (i) spatio-temporal normalization and (ii) channel normalization.
 		  </li>
 		  <br>
-		   For video represenation, we resort resort to a scanning-pooling scheme. For each motionlet, we conduct window scanning over video data and use max pooling to obtain its response maximum. We call this representation as motionlet activation vector.
+		  For video representation, we resort resort to Fisher vector encoding to transform the TDDs of a video clip into a high-dimensional representation. Before Fisher vector encoding, we conduct PCA pre-processing to de-correlate the dimension of TDD and reduce it to 64-dimension.
   </div>
 </div>
 </div>
@@ -202,7 +202,7 @@ div.paper pre {
   <h2>Results</h2>
   <div class="paper">
   <ul> 
-  <li><h3>Examples of Feature Map</h3></li>
+  <li><h3>Examples of Feature Maps</h3></li>
   <img src="feature_map.PNG"  width="770"/>
   <li><h3>PCA Dimension and Normalization Methods</h3> </li>
   <div align=center><img src="result-1.PNG"  width="400" align = "center"/> </div>
@@ -224,7 +224,9 @@ div.paper pre {
 <div class="section">
   <h2>Downloads</h2>
   <div class="paper">
-    Models and Codes will be coming soon.
+    Our trained two-stream ConvNets models: <br>
+    [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.prototxt'>temporal net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.caffemodel'>temporal caffemodel</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.prototxt'>spatial net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.caffemodel'>spatial caffemodel</a> ]
+	
   </div>
 </div>
 </div>
@@ -233,7 +235,8 @@ div.paper pre {
 <div class="section">
   <h2>References</h2>
   <div class="paper">
-    L. Wang, Y. Qiao, and Xiaoou Tang, Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors, in IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2015
+  If you use our trained model, please cite our following paper: <br>
+  L. Wang, Y. Qiao, and Xiaoou Tang, Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors, in IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2015
   </div>
 </div>
 </div>
