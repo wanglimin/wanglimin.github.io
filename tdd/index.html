@@ -155,7 +155,7 @@ div.paper pre {
 
 <div align = "center">
 <h1>Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors</h1> <br />
-<h3>Limin Wang, Yu Qiao, and Xiaoou Tang</h1>
+<h3>Limin Wang, Yu Qiao, and Xiaoou Tang</h3>
 </div>
 
 <div style="clear: both;">
@@ -226,7 +226,14 @@ div.paper pre {
   <div class="paper">
   <ul>
   <li><h3>Our trained models of two-stream ConvNets:</h3> </li>
-    [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.prototxt'>temporal net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.caffemodel'>temporal caffemodel</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.prototxt'>spatial net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.caffemodel'>spatial caffemodel</a> ] <br> <br>
+  [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.caffemodel'>temporal net model</a> ]  [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.caffemodel'>spatial net model</a> ] <br> <br>
+  <li><h3>Deployed Protocol Files for Classification:</h3> </li>
+  [ <a href='http://mmlab.siat.ac.cn/tdd/temporal_cls.prototxt'>temporal net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial_cls.prototxt'>spatial net prototxt</a> ] <br> <br>
+  <li><h3>Deployed Protocol Files for Convolutional Feature Extraction:</h3> </li>
+  [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.prototxt'>temporal net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.prototxt'>spatial net prototxt</a> ] <br> <br>
+    <li><h3>Deployed Mean Files:</h3> </li>
+  For spatial net, we fine tune the model from <a href='https://gist.github.com/ksimonyan/78047f3591446d1d7b91#file-readme-md'>VGG-M-2048 model</a>. So, the mean file is the same with theirs. <br>
+  For temporal net, we train the model from scratch from UCF101 dataset. The mean value is 128 for optical flow fields. <br> <br>
   <li><h3>The code of TDD extraction:</h3> </li>
    Coming soon!
    </ul>
@@ -238,7 +245,7 @@ div.paper pre {
 <div class="section">
   <h2>References</h2>
   <div class="paper">
-  If you use our trained model, please cite the following paper: <br> <br>
+  If you use our trained model or TDD code, please cite the following paper: <br> <br>
   L. Wang, Y. Qiao, and Xiaoou Tang, Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors, in IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2015
   </div>
 </div>
@@ -247,6 +254,8 @@ div.paper pre {
 
 </div>
 </div>
-
+<div style="clear:both;">
+<p align="right"><font size="5">Last Updated on 16th June, 2015</a></font></p>
+</div>
 </body>
 </html>
