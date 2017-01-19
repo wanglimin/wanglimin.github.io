@@ -1,0 +1,261 @@
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>TDD</title>
+	<meta content="Limin, wanglimin.github.io" name="keywords" />
+	<style media="screen" type="text/css">html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0pt none;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0pt;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: 0pt;
+  padding: 0pt;
+  vertical-align: baseline;
+}
+
+a {
+  color: #1772d0;
+  text-decoration:none;
+}
+
+a:focus, a:hover {
+  color: #f09228;
+  text-decoration:none;
+}
+
+a.paper {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+b.paper {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+* {
+  margin: 0pt;
+  padding: 0pt;
+}
+
+body {
+  position: relative;
+  margin: 3em auto 2em auto;
+  width: 800px;
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  background: #eee;
+}
+
+h1 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+strong {
+  font-family: Lato, Verdana, Helvetica, sans-serif;
+  # font-size: 16px;
+  font-weight:bold;
+}
+
+ul { 
+  list-style: circle;
+}
+
+img {
+  border: none;
+}
+
+li {
+  padding-bottom: 0.5em;
+  margin-left: 1.4em;
+}
+
+em, i {
+	font-style:italic;
+}
+
+div.section {
+  clear: both;
+  margin-bottom: 1.5em;
+  background: #eee;
+}
+
+div.spanner {
+  clear: both;
+}
+
+div.paper {
+  clear: both;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 1em 1em 1em 1em;
+}
+img.paper {
+  margin-bottom: 0.5em;
+  float: left;
+  width: 200px;
+}
+
+img.pipeline {
+  float: center;
+  width: 770px;
+}
+
+span.blurb {
+  font-style:italic;
+  display:block;
+  margin-top:0.75em;
+  margin-bottom:0.5em;
+}
+
+pre, code {
+  font-family: 'Lucida Console', 'Andale Mono', 'Courier', monospaced;
+  margin: 1em 0;
+  padding: 0;
+}
+
+div.paper pre {
+  font-size: 0.9em;
+}
+</style>
+
+<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" /><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>-->
+</head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45959174-3', 'wanglimin.github.io');
+  ga('send', 'pageview');
+
+</script>
+<body>
+
+<div align = "center">
+<h1>Temporal Segment Networks: Towards Good Practices for Deep Action Recognition</h1> <br />
+<h3>Limin Wang, Yuanjun Xiong, Zhe Wang, Yu Qiao, Dahua Lin, Xiaoou Tang, and Luc Van Gool</h3>
+</div>
+
+<div style="clear: both;">
+<div class="paper">
+  <img class="pipeline" src="TDD.PNG" title="tsn" />
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Abstract</h2>
+  <div class="paper">
+    Deep convolutional networks have achieved great success for visual recognition in still images. However, for action recognition in videos, the advantage over traditional methods is not so evident. This paper aims to discover the principles to design effective ConvNet archi- tectures for action recognition in videos and learn these models given limited training samples. Our first contribution is temporal segment net- work (TSN), a novel framework for video-based action recognition. which is based on the idea of long-range temporal structure modeling. It com- bines a sparse temporal sampling strategy and video-level supervision to enable efficient and effective learning using the whole action video. The other contribution is our study on a series of good practices in learning ConvNets on video data with the help of temporal segment network. Our approach obtains the state-the-of-art performance on the datasets of HMDB51 (69.4%) and UCF101 (94.2%). We also visualize the learned ConvNet models, which qualitatively demonstrates the effectiveness of temporal segment network and the proposed good practices. 
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Temporal Segment Networks</h2>
+  <div class="paper">
+  As shown in the Figure above, the whole process consists of three steps, 1) Extracting trajectories, 2) Learning convolutional feature maps, and 3) Constructing Trajectory-Pooled Deep-Convolutional Descriptors.
+		  <br><br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong>Extracting trajectories: </strong> We choose to use Improved Trajectories due its good performance on action recognition. However, we only track on a single scale to speed up the process of trajectory extraction.
+		  </li>
+		  <br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong>Learning convolutional maps: </strong> We exploit two-stream ConvNets to learn discriminative feature maps from both RGB images and optical flow fields. Meanwhile, we construct the multi-scale pyramid representation of both modalities and thus obtain the multi-scale convolutional feature maps.
+		  </li>
+		  <br>
+		  <li style = "list-style-type:square; margin-left:0px">
+		  <strong>Constructing TDD: </strong> After the extraction of trajectories and convolutional feature maps, we perform trajectory-constrained pooling to aggregate feature maps into effective descriptors, called TDD. To enhance the discriminative capacity of TDD, we propose two kinds of normalization method: (i) spatio-temporal normalization and (ii) channel normalization.
+		  </li>
+		  <br>
+		  For video representation, we resort resort to Fisher vector encoding to transform the TDDs of a video clip into a high-dimensional representation. Before Fisher vector encoding, we conduct PCA pre-processing to de-correlate the dimension of TDD and reduce it to 64-dimension.
+  </div>
+</div>
+</div>
+
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Results</h2>
+  <div class="paper">
+  <ul> 
+  <li><h3>Examples of Feature Maps</h3></li>
+  <img src="feature_map.PNG"  width="770"/>
+  <li><h3>PCA Dimension and Normalization Methods</h3> </li>
+  <div align=center><img src="result-1.PNG"  width="400" align = "center"/> </div>
+  <li><h3>Performance of Different Layers</h3> </li>
+  <img src="result-2.PNG"  width="770" />
+  <li><h3>Evaluation of TDD:</h3> </li>
+    <div align=center>
+	<img src="result-4.PNG"  width="360" /> 
+	<img src="result-5.PNG"  width="365" />
+	</div>
+  <li><h3>Comparison with the State of The Art</h3> </li>
+  <div align=center><img src="result-3.PNG"  width="400" align = "center"/> </div>
+  </ul>
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>Downloads</h2>
+  <div class="paper">
+  <ul>
+  <li><h3>Our trained models of two-stream ConvNets:</h3> </li>
+  [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.caffemodel'>temporal net model</a> ]  [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.caffemodel'>spatial net model</a> ] <br> <br>
+  <li><h3>Deployed Protocol Files for Classification:</h3> </li>
+  [ <a href='http://mmlab.siat.ac.cn/tdd/temporal_cls.prototxt'>temporal net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial_cls.prototxt'>spatial net prototxt</a> ] <br> <br>
+  <li><h3>Deployed Protocol Files for Convolutional Feature Extraction:</h3> </li>
+  [ <a href='http://mmlab.siat.ac.cn/tdd/temporal.prototxt'>temporal net prototxt</a> ] [ <a href='http://mmlab.siat.ac.cn/tdd/spatial.prototxt'>spatial net prototxt</a> ] <br> <br>
+    <li><h3>Deployed Mean Files:</h3> </li>
+  For spatial net, we fine tune the model from <a href='https://gist.github.com/ksimonyan/78047f3591446d1d7b91#file-readme-md'>VGG-M-2048 model</a>. So, the mean file is the same with theirs. <br>
+  For temporal net, we train the model from scratch from UCF101 dataset. The mean value is 128 for optical flow fields. <br> <br>
+  <li><h3>The code of TDD extraction:</h3> </li>
+   Code on github [ <a href='https://github.com/wanglimin/tdd/'>Link</a> ]
+   </ul>
+  </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div class="section">
+  <h2>References</h2>
+  <div class="paper">
+  If you use our trained model or TDD code, please cite the following paper: <br> <br>
+  L. Wang, Y. Qiao, and Xiaoou Tang, Action Recognition with Trajectory-Pooled Deep-Convolutional Descriptors, in IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2015
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+<div style="clear:both;">
+<p align="right"><font size="5">Last Updated on 16th June, 2015</a></font></p>
+</div>
+</body>
+</html>
